@@ -17,7 +17,7 @@ class ListingFactory extends Factory
     public function definition(): array
     {
         return [
-        'title' => ucwords(join('', fake()->words(2))),
+        'title' => ucwords(join(' ', fake()->words(2))),
         'description'=> fake()->paragraph(5),
         'address'=>fake()->address(),
         'sqft'=>fake()->randomNumber(2, true),
