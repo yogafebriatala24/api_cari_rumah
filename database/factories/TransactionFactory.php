@@ -20,7 +20,7 @@ class TransactionFactory extends Factory
         $startDate = fake()->dateTimeThisMonth();
         return [
             'start_date' => $startDate,
-            'end_date' => Carbon::createFromDate($startDate)->addDays(fake()->numberBetween(1,5)),
+            'end_date' => Carbon::createFromDate($startDate)->addDays(fake()->numberBetween(1, 5)),
             'status' => fake()->randomElement(['waiting', 'approved', 'canceled'])
         ];
     }

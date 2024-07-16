@@ -32,22 +32,22 @@ class listing extends Model
         'attachments' => 'array'
     ];
 
-    function getRouteKeyName() {
+    public function getRouteKeyName() {
         return 'slug';
     }
 
-    function setTitleAttribute($value) {
+    public function setTitleAttribute($value) {
         $this->attributes['title'] = $value;
         $this->attributes['slug'] = Str::slug($value);
     }
 
-    /**
-     * Get all of the comments for the listing
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function transaction(): HasMany
-    {
-        return $this->hasMany(Transaction::class);
-    }
+   /**
+    * Get all of the comments for the listing
+    *
+    * @return \Illuminate\Database\Eloquent\Relations\HasMany
+    */
+   public function transaction(): HasMany
+   {
+       return $this->hasMany(Transaction::class);
+   }
 }
